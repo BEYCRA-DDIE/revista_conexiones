@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import Encabezado from './componentes/Encabezado';
+import Menu from './componentes/Menu';
 
 function App() {
   return (
     <div className="App">
-      <h1>Este es el proyecto de Revista Conexiones</h1>
-      <p>Hola que tal</p>
+      <Encabezado/>
+      <Menu />
     </div>
   );
 }
