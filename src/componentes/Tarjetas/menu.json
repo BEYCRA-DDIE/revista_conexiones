@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "titulo": "",
+        "urlImg": "/img/imagen_1.jpg",
+        "descripcion": "Publicación cuatrimestral"        
+    },
+    {
+        "id": "2",
+        "titulo": "",
+        "urlImg": "/img/imagen_1.jpg",
+        "descripcion": "Publicación actual y anteriores"        
+    },
+    {
+        "id": "3",
+        "titulo": "",
+        "urlImg": "img/imagen_1.jpg",
+        "descripcion": "Catálogo"        
+    }
+]

@@ -2,8 +2,8 @@ import React from "react";
 
 const Encabezado = () => {
   return (
-  <div className="container-fluid">
-    <h1>Revista Conexiones</h1>      
+  <div className="container-fluid text-center background-container">
+    <img className="responsive " src="./assets/img/img_revista_encabezado.png" alt="" /> 
   </div>
   );
 };
