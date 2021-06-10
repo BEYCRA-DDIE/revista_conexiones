@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GModal from "./GModal";
 
-const ContGModal = () => {
+const ContGModal = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
