@@ -7,15 +7,17 @@ import Encabezado from "./componentes/Encabezado";
 import Menu from "./componentes/Menu";
 import ContenidoPrincipal from "./componentes/ContenidoPrincipal";
 import PiePagina from "./componentes/PiePagina";
-import InformacionGeneral from "./componentes/InformacionGeneral";
+//  componentes menú
+import InformacionGeneral from "./componentes/OpcionesInformacion";
 
 function App() {
+  var componenteMenu =  null;
   const [componente, setComponente] = useState(<ContenidoPrincipal />);
   const handlerClickOpcion = (e) => {
-    console.log("opcion", e);
-    if (e=="/informacion") {
-      setComponente(<InformacionGeneral/>)
-    }
+    console.log("opcion", e.currentTarget);
+    (parseInt(e.currentTarget.name) === 5)
+    ?setComponente(<ContenidoPrincipal/>)
+    :setComponente(<InformacionGeneral opcion={parseInt(e.currentTarget.name)}/>);
   };
 
   return (

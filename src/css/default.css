@@ -3,8 +3,14 @@ background-color: bisque;
 }
 
 button.nav-link,
+button.nav-link:active,
 button.nav-link:not(:disabled):not(.disabled).active, 
 button.nav-link:not(:disabled):not(.disabled):active, 
+.show>.nav-link.dropdown-toggle,
+button.btn-primary,
+button.btn-primary:active,
+button.btn-primary:not(:disabled):not(.disabled).active, 
+button.btn-primary:not(:disabled):not(.disabled):active, 
 .show>.btn-primary.dropdown-toggle {
   color: #fff;
   background-image: none;
@@ -15,10 +21,37 @@ button.nav-link:not(:disabled):not(.disabled):active,
   outline: none;
 }
 
-button.nav-link:focus, button.nav-link:hover {
-    color: #fff!important;
+button.btn-tarjetas,
+button.btn-tarjetas:active,
+button.btn-tarjetas:not(:disabled):not(.disabled).active, 
+button.btn-tarjetas:not(:disabled):not(.disabled):active, 
+.show>.btn-tarjetas.dropdown-toggle {
+  color: black;
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  border-color: transparent; 
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-check:focus + .btn, .btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.btn-check:focus + .btn-primary, .btn-primary:focus,
+.btn-check:focus + .btn-tarjetas, .btn-tarjetas:focus {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 0 .25rem transparent !important;
+}
+
+button.nav-link:focus, button.nav-link:hover, 
+button.navbar-brand:focus, button.navbar-brand:hover {
+    color: black!important;
     border: none;
     border-color: transparent;
     text-decoration: none!important;
-    background-color: gray;
+    background-color: transparent;
+    outline: none;
   }
