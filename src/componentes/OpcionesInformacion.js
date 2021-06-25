@@ -166,18 +166,43 @@ export default function OpcionesInformacion(props) {
         </li>
       </ol>
       <div className="d-flex bd-highlight mb-3 align-content-center">
-        <div className="me-auto p-4 bd-highlight">
-        </div>
-        <div className="p-2 bd-highlight"><a className="btn btn-success" href="./assets/files/normas_editoriales.pdf" target="_blank" role="button">Descargar archivo</a>
+        <div className="me-auto p-4 bd-highlight"></div>
+        <div className="p-2 bd-highlight">
+          <a
+            className="btn btn-success"
+            href="./assets/files/normas_editoriales.pdf"
+            target="_blank"
+            role="button"
+          >
+            Descargar archivo
+          </a>
         </div>
       </div>
-      
     </>
   );
   jsxPasos = (
     <>
-      <h1>Pasos de publicacion</h1>
-    
+      <h1>Pasos para publicar</h1>
+      <ol>
+        <li className="lh-base">
+          Realizar el artículo sobre un tema referente a la educación en sus
+          múltiples modalidades, disciplinas y consideraciones.{" "}
+        </li>
+        <li className="lh-base">
+          Revisar las normas editoriales dadas por la Revista y enviar el
+          documento aplicando estas.{" "}
+        </li>
+        <li className="lh-base">
+          Enviar el artículo para revisión del comité editorial al correo{" "}
+          <a href="mailto:revistaconexiones@mep.go.cr">
+            revistaconexiones@mep.go.cr
+          </a>{" "}
+        </li>
+        <li className="lh-base">
+          El Comité Editorial revisará la pertinencia y el cumplimiento de las
+          normas en el artículo y le indicará su atinencia para la Revista.
+        </li>
+      </ol>
     </>
   );
 
