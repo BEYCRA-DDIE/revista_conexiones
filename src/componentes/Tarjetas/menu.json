@@ -1,18 +1,18 @@
 [
     {
-        "id": "1",
+        "id": "6",
         "titulo": "",
         "urlImg": "/img/imagen_1.jpg",
         "descripcion": "Publicación cuatrimestral"        
     },
     {
-        "id": "2",
+        "id": "7",
         "titulo": "",
         "urlImg": "/img/imagen_1.jpg",
-        "descripcion": "Publicación actual y anteriores"        
+        "descripcion": "Publicación actual y anteriores"
     },
     {
-        "id": "3",
+        "id": "8",
         "titulo": "",
         "urlImg": "img/imagen_1.jpg",
         "descripcion": "Catálogo"        

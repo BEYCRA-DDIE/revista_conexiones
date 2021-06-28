@@ -205,8 +205,9 @@ export default function OpcionesInformacion(props) {
       </ol>
     </>
   );
-
+console.log("props.opcion",props.opcion)
   switch (props.opcion) {
+
     case 0:
       jsxData = jsxInformacion;
       break;

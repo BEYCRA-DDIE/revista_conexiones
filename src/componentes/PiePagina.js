@@ -11,6 +11,6 @@ export default function PiePagina() {
           <img src="./assets/img/img_revista.png" alt="Imagen logo revista" />
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
