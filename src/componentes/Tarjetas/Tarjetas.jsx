@@ -1,4 +1,3 @@
-
 const JsxTitulo = (hx, texto) => {
   //console.log(hx, texto);
   let titulo;

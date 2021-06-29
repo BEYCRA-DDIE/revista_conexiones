@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleUp} from "@fortawesome/free-solid-svg-icons";
+const arriba = <FontAwesomeIcon icon={faArrowAltCircleUp} />;
 
 export default function Catalogo() {
   console.log("estoy en catalogo")
@@ -10,20 +13,20 @@ export default function Catalogo() {
         </h2>
       </div>
       <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          {/* <li class="page-item"><a class="page-link" href="#">1</a></li> */}
-          <li class="page-item">
-            <a class="page-link" href="#a">
+        <ul className="pagination justify-content-center">
+          {/* <li className="page-item"><a className="page-link" href="#">1</a></li> */}
+          <li className="page-item">
+            <a className="page-link" href="#a">
               A
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#b">
+          <li className="page-item">
+            <a className="page-link" href="#b">
               B
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#c">
+          <li className="page-item">
+            <a className="page-link" href="#c">
               C
             </a>
           </li>
@@ -36,10 +39,7 @@ export default function Catalogo() {
           </strong>{" "}
           <a href="#regresar">
             <span
-              class="glyphicon glyphicon-arrow-up"
-              aria-hidden="true"
-              title="Subir"
-            ></span>
+            >{arriba}</span>
           </a>
         </h2>
         <p>
@@ -66,11 +66,7 @@ export default function Catalogo() {
           <strong>
             <a name="b" id="b"></a>B{" "}
             <a href="#regresar">
-              <span
-                class="glyphicon glyphicon-arrow-up"
-                aria-hidden="true"
-                title="Subir"
-              ></span>
+              <span>{arriba}</span>
             </a>
           </strong>
         </h2>
@@ -176,13 +172,12 @@ export default function Catalogo() {
         </p>
 
         {/* Letra C */}
-        {/* <h2><strong><a name="c" id="c"></a>C </strong><strong><a href="#regresar"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" title="Subir"></span></a></strong></h2> */}
         <h2>
           <strong>
             <a name="c" id="c"></a>C{" "}
           </strong>
           <strong>
-            <a href="#regresar">Subir</a>
+            <a href="#regresar"><span>{arriba}</span></a>
           </strong>
         </h2>
         <p>

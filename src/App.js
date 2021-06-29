@@ -8,13 +8,6 @@ import Menu from "./componentes/Menu";
 import ContenidoPrincipal from "./componentes/ContenidoPrincipal";
 import PiePagina from "./componentes/PiePagina";
 
-//  componentes menú
-import OpcionesInformacion from "./componentes/OpcionesInformacion";
-
-// opciones de la tarjeta
-import Catalogo from "./componentes/Catalogo";
-
-
 
 function App() {
   const [componente, setComponente] = useState(<ContenidoPrincipal/>);
