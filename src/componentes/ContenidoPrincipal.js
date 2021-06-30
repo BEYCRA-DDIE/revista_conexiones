@@ -4,6 +4,8 @@ import GC from "../_complementos/Global.context"
 // componentes
 import ContTarjetas from "./Tarjetas/ContTarjetas";
 import Catalogo from "./Catalogo";
+import RevistaActual from "./RevistaActual";
+import PublicacionesAnteriores from "./PublicacionesAnteriores";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox } from "@fortawesome/free-solid-svg-icons";
