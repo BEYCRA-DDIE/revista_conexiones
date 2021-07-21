@@ -3,6 +3,7 @@ import GC from "../_complementos/Global.context";
 
 // componentes
 import Editorial from "./Editorial";
+import ArticulosActuales from "./ArticulosActuales";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +11,7 @@ const inscribir = <FontAwesomeIcon icon={faInbox} />;
 
 export default function RevistaActual() {
   const context = useContext(GC);
+  context.setComponente(<ArticulosActuales />);
   const obtenerOpcion = (item) => {
     let opcion = parseInt(item.target.id);
     console.log("opcion", opcion);
@@ -19,7 +21,7 @@ export default function RevistaActual() {
         context.setComponente(<Editorial />);
         break;
       case 2:
-        // context.setComponente(<Articulos />);
+         context.setComponente(<ArticulosActuales />);
         break;
       default:
         break;
@@ -29,9 +31,9 @@ export default function RevistaActual() {
   return (
     <div className="container mt-4">
       <div className="row">
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success m-4 fs-3" id={1}  onClick={obtenerOpcion}>Editorial</button>
-        <button type="button" class="btn btn-success m-4 fs-3" id ={2} onClick={obtenerOpcion}>Articulos</button>
+      <div className="d-flex justify-content-center">
+        <button type="button" className="btn btn-success m-4 fs-3" id={1}  onClick={obtenerOpcion}>Editorial</button>
+        <button type="button" className="btn btn-success m-4 fs-3" id ={2} onClick={obtenerOpcion}>Articulos</button>
       </div>
       </div>
     </div>

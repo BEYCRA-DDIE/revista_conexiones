@@ -52,19 +52,7 @@ export default function Tarjetas(props) {
                 alt={"imagen previa de " + item[conf.titulo]}
               />
             )}
-             {/* <div className="card-body"></div>  */}
-            <div className="card-footer">
-            <div className="d-grid gap-2">
-              <button
-                id={item.id}
-                onClick={ ()=> handleGetItem(i) }
-                className="btn btn-tarjetas btn-block"
-              >
-                {/* 👁️ Ver detalles */}
-                {item[conf.descripcion]}
-              </button>
-            </div>
-            </div>
+             <div className="card-body"></div> 
           </div>
         </div>
       ))}

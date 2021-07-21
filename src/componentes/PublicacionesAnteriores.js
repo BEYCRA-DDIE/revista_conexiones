@@ -29,9 +29,9 @@ export default function PublicacionesAnteriores() {
     <div className="container mt-4">
       <div className="row">
           <h1>Publicaciones Anteriores</h1>
-      {/* <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Editorial</button>
-        <button type="button" class="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Articulos</button>
+      {/* <div className="d-flex justify-content-center">
+        <button type="button" className="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Editorial</button>
+        <button type="button" className="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Articulos</button>
       </div> */}
       </div>
     </div>

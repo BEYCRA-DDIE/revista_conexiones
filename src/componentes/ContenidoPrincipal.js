@@ -4,7 +4,7 @@ import GC from "../_complementos/Global.context"
 // componentes
 import ContTarjetas from "./Tarjetas/ContTarjetas";
 import Catalogo from "./Catalogo";
-import RevistaActual from "./RevistaActual";
+import ContTarjetasArticulos from "./Tarjetas/ContTarjetasArticulos";
 import PublicacionesAnteriores from "./PublicacionesAnteriores";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +18,7 @@ const obtenerOpcion = (item) => {
      console.log("item", item);
   switch (opcion) {
     case 1:
-      context.setComponente(<RevistaActual/>) 
+      context.setComponente(<ContTarjetasArticulos/>) 
       break;
     case 2:
       context.setComponente(<PublicacionesAnteriores/>) 
@@ -37,8 +37,8 @@ return (
       <div className="row">
       <ContTarjetas obtenerOpcion={obtenerOpcion}/>
       </div>   
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success m-4 fs-3">Suscribirse {inscribir}</button>
+      <div className="d-flex justify-content-center">
+        <button type="button" className="btn btn-success m-4 fs-3">Suscribirse {inscribir}</button>
       </div>
     </div>
   );

@@ -46,7 +46,12 @@ const JsxTitulo = (hx, texto) => {
               </div>
               }
               <div className="card-body">
-                  {item[conf.descripcion]}
+                  <p>
+                    Resumen: {item[conf.resumen]}<br />
+                    Autor(a)(es):   {item[conf.autor]}<br />
+                    Páginas: {item[conf.paginas]}<br />
+                    <a href= {item[conf.pdf]} target="_blank">PDF</a> / EPUB / HTML<br />
+                  </p>
               </div>
             </div>
           </div>

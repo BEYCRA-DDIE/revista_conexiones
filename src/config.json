@@ -2,7 +2,7 @@
     
     "version": 1.0,
     "img" : "",
-    "apiDev":   "https://recursos.mep.go.cr/webservices/conexiones/",
+    "apiDev":   "https://recursos.mep.go.cr/webservices/revista_conexiones/",
     "apiDev1":   "http://localhost/webservices/conexiones/"
 
 }
