@@ -12,7 +12,7 @@ const confTarjetas = {
 };
 
 export default function ContTarjetasArticulos(props) {
-  console.log("props.array", props.array);
+  // console.log("props.array", props.array);
   const obtenerItemTarjeta = (item) => {
     // console.log(item.id);
     props.obtenerOpcion(item.id);

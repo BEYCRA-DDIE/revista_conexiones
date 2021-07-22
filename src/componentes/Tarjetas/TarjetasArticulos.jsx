@@ -18,7 +18,7 @@ const JsxTitulo = (hx, texto) => {
         titulo = <h5 className="card-title"> {texto} </h5>;
         break;
       case 6:
-        titulo = <h6 className="card-title"> {texto} </h6>;
+        titulo = <h6 className="card-title text-left"> {texto} </h6>;
         break;
       default:
         titulo = "Opción fuera de rango****";
@@ -36,20 +36,22 @@ const JsxTitulo = (hx, texto) => {
     }
   
     return (
-      <div className="row">
+      
+      <div className="row"> 
+          <h1>Artículos</h1>
         {props.array.map((item, i) => (
           <div key={"tarjetaColumna" + i} className={"col-" + conf.col}>
             <div className="card pb-2 mb-4 ">
               { item[conf.titulo] !== "" &&
-              <div className="card-header text-center">
+              <div className="card-header">
                 {JsxTitulo(conf.hx, item[conf.titulo])}
               </div>
               }
               <div className="card-body">
                   <p>
-                    Resumen: {item[conf.resumen]}<br />
-                    Autor(a)(es):   {item[conf.autor]}<br />
-                    Páginas: {item[conf.paginas]}<br />
+                    <span><strong>Resumen:</strong></span> {item[conf.resumen]}<br />
+                    <span className=""><strong>Autor(a)(es):</strong></span>   {item[conf.autor]}<br />
+                    <span className=""><strong>Páginas:</strong></span> {item[conf.paginas]}<br />
                     <a href= {item[conf.pdf]} target="_blank">PDF</a> / EPUB / HTML<br />
                   </p>
               </div>

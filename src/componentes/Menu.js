@@ -22,7 +22,7 @@ export default function Menu(props) {
 const context = useContext(GC);
 const obtenerOpcion = (item) => {
    let opcion = parseInt(item.currentTarget.name);
-  console.log("item",opcion);
+  // console.log("item",opcion);
   (opcion === 5)
   ?context.setComponente(<ContenidoPrincipal/>)
   :context.setComponente(<OpcionesInformacion opcion= {opcion}/>)
@@ -48,8 +48,12 @@ const obtenerOpcion = (item) => {
             <Nav.Link as={Button} name="4" onClick={obtenerOpcion}>
               Pasos de publicación
             </Nav.Link>
+            {/* <Nav.Link as={Button} name="4" onClick={obtenerOpcion}> */}
+            <Nav.Link as={Button} name="8">
+              Buscar
+            </Nav.Link>
           </Nav>
-          <Form className="d-flex justify-content-end p-2">
+          {/* <Form className="d-flex justify-content-end p-2">
             <FormControl
               type="search"
               placeholder="Búsqueda"
@@ -57,7 +61,7 @@ const obtenerOpcion = (item) => {
               aria-label="Search"
             />
             <Button variant="outline-success">Buscar</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Navbar>
   );

@@ -4,7 +4,7 @@ import GC from "../_complementos/Global.context"
 // componentes
 import ContTarjetas from "./Tarjetas/ContTarjetas";
 import Catalogo from "./Catalogo";
-import ContTarjetasArticulos from "./Tarjetas/ContTarjetasArticulos";
+import ArticulosActuales from "./ArticulosActuales";
 import PublicacionesAnteriores from "./PublicacionesAnteriores";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,10 +15,10 @@ export default function ContenidoPrincipal(props){
 const context = useContext(GC);
 const obtenerOpcion = (item) => {
   let opcion = parseInt(item);
-     console.log("item", item);
+    //  console.log("item", item);
   switch (opcion) {
     case 1:
-      context.setComponente(<ContTarjetasArticulos/>) 
+      context.setComponente(<ArticulosActuales/>) 
       break;
     case 2:
       context.setComponente(<PublicacionesAnteriores/>) 

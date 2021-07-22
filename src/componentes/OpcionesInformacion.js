@@ -1,6 +1,5 @@
 import React from "react";
 
-import ContModalMenu from "./Modal/ContModalMenu";
 
 export default function OpcionesInformacion(props) {
   var jsxInformacion = null,
