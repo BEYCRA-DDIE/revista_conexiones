@@ -32,16 +32,14 @@ export default function ArticulosActuales() {
       // console.log("id", id);
       filtrados = filtrarKey(datos, "id_revista", id);
       setCargado(true);
-      // console.log("filtrados para enviar", filtrados);
+      //  console.log("filtrados para enviar", filtrados);
     });
   }
 
   useEffect(() => {
-    // console.log("Componente montado");
     asyncCallDatas();
   }, []);
 
-  asyncCallDatas();
   
   const handlerClickButton = () => {
     setVerEditorial(true);

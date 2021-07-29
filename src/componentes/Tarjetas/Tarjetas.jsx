@@ -39,21 +39,34 @@ export default function Tarjetas(props) {
     <div className="row">
       {props.array.map((item, i) => (
         <div key={"tarjetaColumna" + i} className={"col-" + conf.col}>
-          <div className="card pb-2 mb-4 ">
-            { item[conf.titulo] !== "" &&
-            <div className="card-header text-center">
-              {JsxTitulo(conf.hx, item[conf.titulo])}
-            </div>
+          <div className="card mb-4 ">
+            { item[conf.titulo] &&            
+              <div className="card-header text-center">
+                {JsxTitulo(conf.hx, item[conf.titulo])}
+              </div>
             }
-            {conf.img && (
-              <img
+            {conf.img && 
+              conf.img_url
+
+              ?(<img
+              src={ item[conf.imagen]}
+              className="img-fluid"
+              alt={"imagen previa de " + item[conf.titulo]}
+              />)
+              :(<img
                 src={"./assets/" + item.urlImg}
                 className="img-fluid"
                 alt={"imagen previa de " + item[conf.titulo]}
-              />
-            )}
+              />)
+              }
              {/* <div className="card-body"></div>  */}
             <div className="card-footer">
+            {conf.informacion && 
+                (<>
+                  <p>Volumen: {item[conf.volumen]}<br />
+                     Numero:  {item[conf.numero]}</p>
+                  </>
+                )}
             <div className="d-grid gap-2">
               <button
                 id={item.id}
@@ -61,7 +74,7 @@ export default function Tarjetas(props) {
                 className="btn btn-tarjetas btn-block"
               >
                 {/* 👁️ Ver detalles */}
-                {item[conf.descripcion]}
+                {item[conf.descripcion]} 
               </button>
             </div>
             </div>

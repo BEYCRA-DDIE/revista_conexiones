@@ -1,39 +1,44 @@
-import React, { useContext } from "react";
-import GC from "../_complementos/Global.context";
+import React, {useState, useEffect } from "react";
+import ContAnteriores from "./Tarjetas/ContAnteriores";
 
-// componentes
-import Editorial from "./Editorial";
+import { getData } from "gespro-utils/akiri";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInbox } from "@fortawesome/free-solid-svg-icons";
-const inscribir = <FontAwesomeIcon icon={faInbox} />;
+import config from "../config.json";
+
+/* URL API */
+const API_URL = config.apiDev;
+var publicaciones = null;
 
 export default function PublicacionesAnteriores() {
-  const context = useContext(GC);
-  const obtenerOpcion = (item) => {
-    let opcion = parseInt(item);
-    console.log("item", item);
-    switch (opcion) {
-      case 1:
-        context.setComponente(<Editorial />);
-        break;
-      case 2:
-        // context.setComponente(<Articulos />);
-        break;
-      default:
-        break;
-    }
-  };
 
+  const [cargado, setCargado] = useState(false);
+  
+  async function asyncCallData() {
+    // carga de los JSON de los selects
+    let url = API_URL + "consulta_revistas.php";
+    await getData(url).then((respuesta) => {
+       publicaciones = respuesta;
+      console.log("publicaciones", publicaciones);
+      setCargado(true);
+    });
+  }
+
+  useEffect(() => {
+    asyncCallData();
+  }, []);
+
+  
   return (
-    <div className="container mt-4">
-      <div className="row">
-          <h1>Publicaciones Anteriores</h1>
-      {/* <div className="d-flex justify-content-center">
-        <button type="button" className="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Editorial</button>
-        <button type="button" className="btn btn-success m-4 fs-3" onClick={obtenerOpcion}>Articulos</button>
-      </div> */}
-      </div>
+    <div className="container-fluid mt-4">
+      {cargado ? (
+        // <p>Publicaciones Anteriores</p>
+        <ContAnteriores array={publicaciones} />           
+        ) : (
+          <h4>
+            Cargando datos <span className="spinner-grow"></span>
+          </h4>
+        )
+      }
     </div>
   );
 }
