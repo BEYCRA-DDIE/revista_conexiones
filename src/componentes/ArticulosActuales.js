@@ -1,18 +1,24 @@
 import React, { useContext, useState, useEffect } from "react";
 import ContGModal from "./Modal/ContGModal";
 
+//componentes
+import ContTarjetasArticulos from "./Tarjetas/ContTarjetasArticulos";
+
 import GC from "../_complementos/Global.context";
 
 import { getData } from "gespro-utils/akiri";
 import { filtrarKey } from "gespro-utils/filtrar_array";
 
 import config from "../config.json";
-import ContTarjetasArticulos from "./Tarjetas/ContTarjetasArticulos";
+
+
 
 /* URL API */
 const API_URL = config.apiDev;
 
-var filtrados = null;
+var filtrados = null,
+revista = null,
+meses = ["","Enero", "Febrero", "Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octubre","Noviembre","Diciembre"];
 
 export default function ArticulosActuales() {
   const context = useContext(GC);
@@ -26,9 +32,9 @@ export default function ArticulosActuales() {
     // carga de los JSON de los selects
     let url = API_URL + "consulta_ultima_revista.php";
     await getData(url).then((respuesta) => {
-      const revistaActual = respuesta[0];
-      // console.log("revista", revistaActual);
-      const id = revistaActual.id;
+      revista = respuesta[0];
+      console.log("revista", revista);
+      const id = revista.id;
       // console.log("id", id);
       filtrados = filtrarKey(datos, "id_revista", id);
       setCargado(true);
@@ -58,6 +64,8 @@ export default function ArticulosActuales() {
                 />
               </div>
             </div> 
+          <h1>{revista.nombre} </h1>
+          <h2>Volumen {revista.volumen}, número  {revista.numero} - {meses[revista.mes]} - ISSN {revista.issn}</h2>
           <ContTarjetasArticulos array={filtrados} />
           </React.Fragment>    
         ) : (

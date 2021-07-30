@@ -63,8 +63,9 @@ export default function Tarjetas(props) {
             <div className="card-footer">
             {conf.informacion && 
                 (<>
-                  <p>Volumen: {item[conf.volumen]}<br />
-                     Numero:  {item[conf.numero]}</p>
+                  <p>{item[conf.numero]}° cuatrimestre {item[conf.anno]}<br />
+                      Volumen: {item[conf.volumen]}
+                      </p>
                   </>
                 )}
             <div className="d-grid gap-2">

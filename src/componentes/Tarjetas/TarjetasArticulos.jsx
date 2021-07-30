@@ -38,7 +38,7 @@ const JsxTitulo = (hx, texto) => {
     return (
       
       <div className="row"> 
-          <h1>Artículos</h1>
+          <h3>Artículos</h3>
         {props.array.map((item, i) => (
           <div key={"tarjetaColumna" + i} className={"col-" + conf.col}>
             <div className="card pb-2 mb-4 ">
