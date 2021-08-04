@@ -59,8 +59,8 @@ export default function Articulos(props) {
         setCargado(true);
       });
     } else {
-      filtrados = filtrarKey(datos, "id_revista", "1");
       revista = props.revista;
+      filtrados = filtrarKey(datos, "id_revista", revista.id );
       setCargado(true);
     }
   }
@@ -82,9 +82,9 @@ export default function Articulos(props) {
       {cargado ? (
         <React.Fragment>
           <div className="row">
-            <div className="col-sm-10">
-              {!props.actual && (
-                <>
+              {!props.actual
+              ?(
+                 <div className="col-sm-12">
                   <button
                     type="button"
                     name="regresar"
@@ -94,22 +94,33 @@ export default function Articulos(props) {
                   {anterior} Regresar a Publicaciones Anteriores
                   </button>
                   <br />
-                </>
-              )}
-            </div>
-            <div className="col-sm-2">
-              <ContGModal
-                textoboton="Ver Editorial"
-                titulo="Editorial"
-                data={1}
-              />
-            </div>
+                </div>)
+              :(
+              <div className="col-sm-12">
+                <ContGModal
+                  textoboton="Ver Editorial"
+                  titulo="Editorial"
+                  data={1}
+                />
+              </div>
+            )
+            }
           </div>
-          <h1>{revista.nombre} </h1>
-          <h2>
-            Volumen {revista.volumen}, número {revista.numero} -{" "}
-            {meses[revista.mes]} {revista.anno} - ISSN {revista.issn}
-          </h2>
+          <div className="row">
+            <h1>{revista.nombre} </h1>
+            <h2>
+              Volumen {revista.volumen}, número {revista.numero} -{" "}
+              {meses[revista.mes]} {revista.anno} - ISSN {revista.issn}
+            </h2>
+          </div>
+          {!props.actual && (
+            <>
+                  <div className="d-flex justify-content-end">
+                  <h6><strong>EDITORIAL</strong>: <a href={revista.url_editorial+".pdf"} target="_blank">PDF</a> / <a href={revista.url_editorial+".epub"} target="_blank">EPUB</a> / <a href={revista.url_editorial+".html"} target="_blank">HTML</a></h6>
+                  <hr />
+                </div>          
+            </>
+          )}
           <ContTarjetasArticulos array={filtrados} />
         </React.Fragment>
       ) : (

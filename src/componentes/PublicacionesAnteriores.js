@@ -33,9 +33,12 @@ export default function PublicacionesAnteriores() {
   }, []);
 
   const handlerClickElemento = (item) => { 
+    console.log("id de la revista seleccionada", item.target.id)
     let arrayRevista = filtrarKey(publicaciones, "id", item.target.id);
+    console.log("arrayRevista", arrayRevista);
     let revista = arrayRevista[0];
-    context.setComponente(<Articulos actual = {false} id = {"1"}  revista = {revista} />) 
+    console.log("revista", revista);
+    context.setComponente(<Articulos actual = {false} revista = {revista} />) 
   };
 
   
@@ -55,9 +58,6 @@ export default function PublicacionesAnteriores() {
                       {
                         (item.articulos !== "0") && (
                         <>
-                          <button type="button" name="editorial" id = {item.id} className="btn btn-link" onClick= {handlerClickElemento}>Editorial</button><br />
-                          {/* Articulos<br /> */}
-                          {/* <button type="button" class="btn btn-link">Link</button> */}
                           <button type="button" name= "articulos" id = {item.id} className="btn btn-link" onClick= {handlerClickElemento}>Artículos</button><br />
                           
                         </>
