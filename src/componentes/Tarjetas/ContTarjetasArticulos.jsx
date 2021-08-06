@@ -8,7 +8,9 @@ const confTarjetas = {
   resumen: "resumen", //nombre del campo de la descripción
   autor: "autor",
   paginas : "pagina",
-  pdf : "url_pdf"
+  pdf : "url_pdf",
+  epub : "url_epub",
+  html: "url_html"
 };
 
 export default function ContTarjetasArticulos(props) {
