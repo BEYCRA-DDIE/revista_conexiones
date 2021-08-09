@@ -1,7 +1,15 @@
 .background-container{
-background-color: bisque;
+background-color: #54bcbe;
 }
 
+.fondo-menu {
+background-color: #26476a !important;
+}
+
+/* img.img-encabezado {
+   max-width: 548px; 
+   max-height: auto; 
+} */
 button.nav-link,
 button.nav-link:active,
 button.nav-link:not(:disabled):not(.disabled).active, 
@@ -12,7 +20,7 @@ button.btn-primary:active,
 button.btn-primary:not(:disabled):not(.disabled).active, 
 button.btn-primary:not(:disabled):not(.disabled):active, 
 .show>.btn-primary.dropdown-toggle {
-  color: #fff;
+  color: #fff !important;
   background-image: none;
   background-color: transparent;
   border: none;

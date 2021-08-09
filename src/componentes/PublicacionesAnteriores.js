@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import ContGModal from "./Modal/ContGModal";
 import Articulos from "./Articulos";
 
 import GC from "../_complementos/Global.context";

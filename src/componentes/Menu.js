@@ -28,15 +28,15 @@ const obtenerOpcion = (item) => {
   :context.setComponente(<OpcionesInformacion opcion= {opcion}/>)
 }
   return (
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Button} name="5" onClick={obtenerOpcion}>{inicio} </Navbar.Brand>
+      <Navbar className= "fondo-menu" bg="" expand="lg">
+        <Navbar.Brand className="btn-menu" as={Button} name="5" onClick={obtenerOpcion}>{inicio} </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mr-auto my-2 my-lg-0" navbarScroll>
 						<Nav.Link as={Button} name="0" onClick={obtenerOpcion}>
               Informacion General
             </Nav.Link>
-            <Nav.Link as={Button} name="1" onClick={obtenerOpcion}>
+            <Nav.Link className="btn-menu" as={Button} name="1" onClick={obtenerOpcion}>
               Comité Editorial
             </Nav.Link>
             <Nav.Link as={Button} name="2" onClick={obtenerOpcion}>
