@@ -12,9 +12,8 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faHome} from "@fortawesome/free-solid-svg-icons";
 
 const inicio = <FontAwesomeIcon icon={faHome} />;
 
@@ -34,23 +33,24 @@ const obtenerOpcion = (item) => {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mr-auto my-2 my-lg-0" navbarScroll>
 						<Nav.Link as={Button} name="0" onClick={obtenerOpcion}>
-              Informacion General
+              <img src="./assets/img/img_informacion_general.png" alt="imagen" /> Informacion General              
             </Nav.Link>
             <Nav.Link className="btn-menu" as={Button} name="1" onClick={obtenerOpcion}>
-              Comité Editorial
+            <img src="./assets/img/img_comite.png" alt="imagen" /> Comité Editorial
+            
             </Nav.Link>
             <Nav.Link as={Button} name="2" onClick={obtenerOpcion}>
-            Comité Asesor
+            <img src="./assets/img/img_comite.png" alt="imagen" /> Comité Asesor
             </Nav.Link>
             <Nav.Link as={Button} name="3" onClick={obtenerOpcion}>
-              Normas de publicación
+            <img src="./assets/img/img_normas_publicacion.png" alt="imagen" /> Normas de publicación
             </Nav.Link>
             <Nav.Link as={Button} name="4" onClick={obtenerOpcion}>
-              Pasos de publicación
+            <img src="./assets/img/img_pasos_publicacion.png" alt="imagen" /> Pasos de publicación
             </Nav.Link>
             {/* <Nav.Link as={Button} name="4" onClick={obtenerOpcion}> */}
             <Nav.Link as={Button} name="8">
-              Buscar
+            <img src="./assets/img/img_buscar.png" alt="imagen" /> Buscar
             </Nav.Link>
           </Nav>
           {/* <Form className="d-flex justify-content-end p-2">

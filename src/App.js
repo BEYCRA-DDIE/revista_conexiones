@@ -33,7 +33,7 @@ function App() {
   },[]);  
 
   return (
-    <div>
+    <div className= "container">
        <GC.Provider value={{ componente, setComponente,dataArticulos}}> 
           <Encabezado />
           <Menu/>

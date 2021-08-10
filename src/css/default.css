@@ -1,15 +1,32 @@
 .background-container{
 background-color: #54bcbe;
+  background-image: url(fondo-header.png);
+  background-repeat: repeat;
+  padding: 15px;
 }
 
+.background-pie{
+  background-color: #54bcbe;
+}
 .fondo-menu {
 background-color: #26476a !important;
 }
 
-/* img.img-encabezado {
-   max-width: 548px; 
-   max-height: auto; 
-} */
+button.btn-suscribirse {
+  width: 284px;
+}
+
+img.logo-mep {
+  height: 60px;
+}
+
+.col-header {
+  padding:3%;
+}
+
+ img.img-encabezado {
+  width: 548px;   
+} 
 button.nav-link,
 button.nav-link:active,
 button.nav-link:not(:disabled):not(.disabled).active, 
@@ -56,7 +73,8 @@ button.btn-tarjetas:not(:disabled):not(.disabled):active,
 
 button.nav-link:focus, button.nav-link:hover, 
 button.navbar-brand:focus, button.navbar-brand:hover {
-    color: black!important;
+    color: white!important;
+    font-weight: bold;
     border: none;
     border-color: transparent;
     text-decoration: none!important;

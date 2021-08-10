@@ -31,6 +31,9 @@ const obtenerOpcion = (item) => {
       break;
   }
  }
+ const handlerClickElemento = (item) => {
+   console.log("llamado al formulario de inscripción")
+ }
 
 return (
     <div className="container mt-4">
@@ -38,7 +41,13 @@ return (
       <ContTarjetas obtenerOpcion={obtenerOpcion}/>
       </div>   
       <div className="d-flex justify-content-center">
-        <button type="button" className="btn btn-success m-4 fs-3">Suscribirse {inscribir}</button>
+      <button type="button" className="btn btn-link" onClick= {handlerClickElemento}>
+      <img
+            className="mt-2 btn-suscribirse"
+            src="./assets/img/btn_suscribirse.png"
+            alt="suscribirse"
+          />
+      </button><br />
       </div>
     </div>
   );
