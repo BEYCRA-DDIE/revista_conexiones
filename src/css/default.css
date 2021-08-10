@@ -12,6 +12,10 @@ background-color: #54bcbe;
 background-color: #26476a !important;
 }
 
+.container-memu {
+  background-color : #e3e3e3!important;
+}
+
 button.btn-suscribirse {
   width: 284px;
 }

@@ -2,19 +2,19 @@
     {
         "id": "1",
         "titulo": "",
-        "urlImg": "/img/imagen_1.jpg",
+        "urlImg": "/img/img_revista_actual.png",
         "descripcion": "Publicación actual"        
     },
     {
         "id": "2",
         "titulo": "",
-        "urlImg": "/img/imagen_1.jpg",
+        "urlImg": "/img/img_publicaciones_anteriores.png",
         "descripcion": "Publicaciones anteriores"
     },
     {
         "id": "3",
         "titulo": "",
-        "urlImg": "img/imagen_1.jpg",
+        "urlImg": "img/img_catalogo.png",
         "descripcion": "Catálogo"        
     }
 ]

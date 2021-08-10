@@ -36,7 +36,7 @@ const obtenerOpcion = (item) => {
  }
 
 return (
-    <div className="container mt-4">
+    <div className="container  container-menu mt-4">
       <div className="row">
       <ContTarjetas obtenerOpcion={obtenerOpcion}/>
       </div>   
