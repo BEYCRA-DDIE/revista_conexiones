@@ -39,7 +39,7 @@ export default function Tarjetas(props) {
     <div className="row">
       {props.array.map((item, i) => (
         <div key={"tarjetaColumna" + i} className={"col-" + conf.col}>
-          <div className="card mb-4 ">
+          <div className = {"card mb-4 " + conf.padding}>
             { item[conf.titulo] &&            
               <div className="card-header text-center">
                 {JsxTitulo(conf.hx, item[conf.titulo])}
@@ -47,10 +47,9 @@ export default function Tarjetas(props) {
             }
             {conf.img && 
               conf.img_url
-
               ?(<img
               src={ item[conf.imagen]}
-              className="img-fluid"
+              className= {"card mb-4 " + conf.imgpadding}
               alt={"imagen previa de " + item[conf.titulo]}
               />)
               :(<img
@@ -60,12 +59,20 @@ export default function Tarjetas(props) {
               />)
               }
              {/* <div className="card-body"></div>  */}
-            <div className="card-footer">
+            <div className={"card-footer" + conf.footer}>
             {conf.informacion && 
                 (<>
-                  <p>{item[conf.numero]}° cuatrimestre {item[conf.anno]}<br />
+                  <span>{item[conf.numero]}° cuatrimestre {item[conf.anno]}<br />
                       Volumen: {item[conf.volumen]}
-                      </p>
+                      <br />
+                      <a href= {item[conf.url_revista]} target="_blank">Revista</a>
+                  </span> <br />
+                  {
+                        (item.articulos !== "0") && (
+                        <>
+                          <button type="button" name= "articulos" id = {item.id} className="btn btn-link" onClick= {props.handlerClickElemento}>Artículos</button><br />
+                        </>
+                        )}
                   </>
                 )}
             <div className="d-grid gap-2">

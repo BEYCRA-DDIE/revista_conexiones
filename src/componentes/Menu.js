@@ -33,7 +33,7 @@ const obtenerOpcion = (item) => {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="mr-auto my-2 my-lg-0" navbarScroll>
 						<Nav.Link as={Button} name="0" onClick={obtenerOpcion}>
-              <img src="./assets/img/img_informacion_general.png" alt="imagen" /> Informacion General              
+              <img src="./assets/img/img_informacion_general.png" alt="imagen" /> Informacion general              
             </Nav.Link>
             <Nav.Link className="btn-menu" as={Button} name="1" onClick={obtenerOpcion}>
             <img src="./assets/img/img_comite.png" alt="imagen" /> Comité Editorial

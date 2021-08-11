@@ -226,5 +226,5 @@ console.log("props.opcion",props.opcion)
       break;
   }
 
-  return <div className="container mt-2 m-4">{jsxData}</div>;
+  return <div className="row p-4"><div className= "col-sm-12">{jsxData}</div></div>
 }

@@ -22,7 +22,7 @@ var contenido = null;
         <div className="col-12">
         <div className="d-flex justify-content-end">
           <input
-            className="btn btn-outline-success"
+            className="btn btn-editorial"
             type="button"
             onClick={handleShow}
             value={props.textoboton}

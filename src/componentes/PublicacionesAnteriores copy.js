@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import Articulos from "./Articulos";
-import ContAnteriores from "./Tarjetas/ContAnteriores";
 
 import GC from "../_complementos/Global.context";
 
@@ -17,7 +16,7 @@ var publicaciones = null;
 export default function PublicacionesAnteriores() {
 
   const [cargado, setCargado] = useState(false);
-   const context = useContext(GC);
+  const context = useContext(GC);
   
   async function asyncCallData() {
     let url = API_URL + "consulta_revistas.php";
@@ -28,7 +27,7 @@ export default function PublicacionesAnteriores() {
     });
   }
 
-   useEffect(() => {
+  useEffect(() => {
     asyncCallData();
   }, []);
 
@@ -37,15 +36,38 @@ export default function PublicacionesAnteriores() {
     let arrayRevista = filtrarKey(publicaciones, "id", item.target.id);
     console.log("arrayRevista", arrayRevista);
     let revista = arrayRevista[0];
-     console.log("revista", revista);
-     context.setComponente(<Articulos actual = {false} revista = {revista} />) 
-   };
+    console.log("revista", revista);
+    context.setComponente(<Articulos actual = {false} revista = {revista} />) 
+  };
 
   
   return (
     <div className="container-fluid mt-4">
       {cargado ? (
-          <ContAnteriores array={publicaciones} handlerClickElemento= {handlerClickElemento}/>      
+        <React.Fragment>
+        <div className="row">
+        {publicaciones.map((item, i) => (
+            <div key={"tarjetaColumna" + i} className="col-sm-3 mb-4">
+              <img
+              src={ item.imagen}
+              className="img-rounded"
+              alt={"imagen previa de"}/> 
+               <p>{item.numero}° cuatrimestre {item.anno}<br />
+                      Volumen: {item.volumen} <br />
+                      {
+                        (item.articulos !== "0") && (
+                        <>
+                          <button type="button" name= "articulos" id = {item.id} className="btn btn-link" onClick= {handlerClickElemento}>Artículos</button><br />
+                          
+                        </>
+                      )}
+                      <a href= {item.url_revista} target="_blank">Revista completa</a>
+                </p>
+            </div>
+        ))
+        }
+        </div>
+        </React.Fragment>
       )
       : (
           <h4>

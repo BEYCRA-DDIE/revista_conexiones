@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import GC from "../_complementos/Global.context"
+import React, { useContext } from "react";
+import GC from "../_complementos/Global.context";
 
 // componentes
 import ContTarjetas from "./Tarjetas/ContTarjetas";
@@ -11,44 +11,52 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox } from "@fortawesome/free-solid-svg-icons";
 const inscribir = <FontAwesomeIcon icon={faInbox} />;
 
-export default function ContenidoPrincipal(props){
-const context = useContext(GC);
-const obtenerOpcion = (item) => {
-  let opcion = parseInt(item);
+export default function ContenidoPrincipal(props) {
+  const context = useContext(GC);
+  const obtenerOpcion = (item) => {
+    let opcion = parseInt(item);
     //  console.log("item", item);
-  switch (opcion) {
-    case 1:
-      context.setComponente(<Articulos actual = {true} />) 
-      break;
-    case 2:
-      context.setComponente(<PublicacionesAnteriores/>) 
-    break;
-    case 3:
-      context.setComponente(<Catalogo/>) 
-      break;
-  
-    default:
-      break;
-  }
- }
- const handlerClickElemento = (item) => {
-   console.log("llamado al formulario de inscripción")
- }
+    switch (opcion) {
+      case 1:
+        context.setComponente(<Articulos actual={true} />);
+        break;
+      case 2:
+        context.setComponente(<PublicacionesAnteriores />);
+        break;
+      case 3:
+        context.setComponente(<Catalogo />);
+        break;
 
-return (
-    <div className="container  container-menu mt-4">
+      default:
+        break;
+    }
+  };
+  const handlerClickElemento = (item) => {
+    console.log("llamado al formulario de inscripción");
+  };
+
+  return (
+    <div className="container container-menu ">
       <div className="row">
-      <ContTarjetas obtenerOpcion={obtenerOpcion}/>
-      </div>   
+        <ContTarjetas obtenerOpcion={obtenerOpcion} />
+      </div>
+      <div className="row">
       <div className="d-flex justify-content-center">
-      <button type="button" className="btn btn-link" onClick= {handlerClickElemento}>
-      <img
-            className="mt-2 btn-suscribirse"
-            src="./assets/img/btn_suscribirse.png"
-            alt="suscribirse"
-          />
-      </button><br />
+        <div class="align-self-center">
+          <button
+            type="button"
+            className="btn btn-link"
+            onClick={handlerClickElemento}
+          >
+            <img
+              className="responsive mt-2 btn-suscribirse"
+              src="./assets/img/btn_suscribirse.png"
+              alt="suscribirse"
+            />
+          </button>
+        </div>
       </div>
     </div>
+    </div>
   );
-};
+}
