@@ -50,7 +50,32 @@ const JsxTitulo = (hx, texto) => {
               <div className="card-body">
                   <p>
                     <span><strong>Resumen:</strong></span> {item[conf.resumen]}<br />
-                    <span className=""><strong>Autor(a)(es):</strong></span>   {item[conf.autor]}<br />
+                    {item.autores.length == 1 
+                    ?<> <span className=""><strong>Autor(a): </strong></span>{item.autores[0].nombre} {item.autores[0].apellido1} {item.autores[0].apellido2}<br /></>
+                    :
+                    <> 
+                     <span className=""><strong>Autoras(es): </strong></span>
+                     {item.autores.map((autor, i) => (
+                       <>
+                          <span>{autor.nombre} </span>
+                          {autor.apellido2 
+                          ?<>
+                            <span>{autor.apellido1} </span>
+                            <span>{autor.apellido2}</span>
+                          </>
+                          :
+                          <>
+                            <span>{autor.apellido1}</span>
+                          </>
+                          }
+                          {i !== item.autores.length-1 && <span>, </span>}
+                       </>
+                     ))
+                      }
+                      <br />
+                    </>
+                    }
+                    
                     <span className=""><strong>Páginas:</strong></span> {item[conf.paginas]}<br />
                     <a href= {item[conf.pdf]} target="_blank">PDF</a> / <a href= {item[conf.epub]} target="_blank">EPUB</a> / <a href= {item[conf.html]} target="_blank">HTML</a><br />
                   </p>

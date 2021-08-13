@@ -6,7 +6,6 @@ const confTarjetas = {
   hx: 6, //tamaño del título (1 - 6) Ej si es (h1) hx= 1
   titulo: "nombre_articulo", // nombre del campo con la iformación que se depliega en el título de la tarjeta
   resumen: "resumen", //nombre del campo de la descripción
-  autor: "autor",
   paginas : "pagina",
   pdf : "url_pdf",
   epub : "url_epub",

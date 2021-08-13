@@ -18,42 +18,51 @@ var dataArticulos = null,
 function App() {
   const [componente, setComponente] = useState(<ContenidoPrincipal/>);
   const [cargado, setCargado] = useState(false);
-
-  function obtenerAutores(idArticulo) {
+  
+  function obtenerAutores(dataId) {
     let autores = [];
     dataAutores.forEach(element => {
-      if (element.id_articulo == idArticulo) {
+      if (parseInt(element.id_articulo) == parseInt(dataId)) {
         autores.push(element);
       }
-    };
-    return autores
+    });
+    return autores;
   };
 
-  async function asyncCallDatas() {
+  async function asyncCallDatas(cb) {
   
     // carga de los JSON de los selects
     let  url = API_URL + "consulta_articulos.php";
-    console.log("url", url);
+    // console.log("url", url);
     await getData(url)
     .then(respuesta => {
-       console.log("respuesta",respuesta);  
+      //  console.log("respuesta",respuesta);  
       dataArticulos = respuesta;
-      // setCargado(true);
     });
     url = API_URL + "consulta_autores.php";
-    console.log("url", url);
+    // console.log("url", url);
     await getData(url)
     .then(respuesta => {
-       console.log("respuesta",respuesta);  
       dataAutores = respuesta;
-      // setCargado(true);
     });
-    dataArticulos.forEach(element => {
-      dataArticulos.autores = obtenerAutores($dataArticulos.id);
-    });
+   cb();
   }
   useEffect(() => {
-    asyncCallDatas();
+    asyncCallDatas(function () {
+      let array = dataArticulos;
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        element.autores = obtenerAutores(element.id);
+     }
+    //  console.log("dataArticulos", dataArticulos);
+    //  dataArticulos.forEach(element => {
+    //     element.autores.forEach(autor => {
+    //    console.log("autor", autor);
+    //   });  
+    //  });
+    //  console.log("dataArticulos", dataArticulos);
+      setCargado(true);
+    });
   },[]);  
 
   return (
@@ -62,7 +71,7 @@ function App() {
           <GC.Provider value={{ componente, setComponente,dataArticulos}}> 
               <Encabezado />
               <Menu/>
-              {/* {componente} */}
+              {componente}
               <PiePagina />
           </GC.Provider>
       ) : (

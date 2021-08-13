@@ -7,59 +7,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleUp} from "@fortawesome/free-solid-svg-icons";
 const arriba = <FontAwesomeIcon icon={faArrowAltCircleUp} />;
 
-var arrayLetras = [];
-
 export default function Catalogo() {
 
   const context = useContext(GC);
   const [cargado, setCargado] = useState(false);
   var datos = context.dataArticulos;
-  
-  
-  function CargaDatos(cb){  
-    let arreglo = [];
+  var autores = datos.autores;
+  console.log("autores", autores);
 
-    datos.sort(function (a, b) {
-      if (a.autores[0].apellido1 > b.autores[0].apellido1) {
-        return 1;
-      }
-      if (a.autores[0].apellido1 < b.autores[0].apellido1) {
-        return -1;
-      }
-      // a must be equal to b
-      return 0;
-    });
-    let letrasA = [];
-    // console.log("datos",datos);
-    datos.forEach(element => {
-      arreglo.push(element.autores);
-    });
-    // extrae la primera letra del primer autor
-     arreglo.forEach(function(element,index) {
-      letrasA[index]= element[0].apellido1[0];
-     })
-     //filtra y elimina repetidos
-     arrayLetras = letrasA.filter((item,index)=>{
-      return letrasA.indexOf(item) === index;
-    })
-    
-    // console.log("arrayLetras",arrayLetras);
-     cb();
-}
-  
-   useEffect(() => {
-    CargaDatos(function(){setCargado(true)});
-  }, []);
-
-  const handlerClickLetra = (item) => {
-      console.log("item",item.target.name);
-  }
-  
-  // console.log("estoy en catalogo, datos", datos)
+  console.log("estoy en catalogo, datos", datos)
   return (
     <div className="container">
-         {cargado ? (
-        <React.Fragment>
+      {/* <div className="row">
+        <div className="col-sm-12"> */}
       <div>
         <h2>
           <a name="regresar" id="regresar"></a>Catálogo por autor:
@@ -67,13 +27,22 @@ export default function Catalogo() {
       </div>
       <nav aria-label="Page navigation example">
         <ul className="pagination justify-content-center">
-        {arrayLetras.map((item, i) => (
-          <li key={"letra"+i}className="page-item">
-            <a className="page-link" href={"#"+item.toLowerCase()}> 
-             {item.toUpperCase()}
+          {/* <li className="page-item"><a className="page-link" href="#">1</a></li> */}
+          <li className="page-item">
+            <a className="page-link" href="#a">
+              A
             </a>
           </li>
-        ))}
+          <li className="page-item">
+            <a className="page-link" href="#b">
+              B
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="#c">
+              C
+            </a>
+          </li>
         </ul>
       </nav>
       <div>
@@ -303,12 +272,6 @@ export default function Catalogo() {
           <strong></strong>
         </p>
       </div>
-      </React.Fragment>
-       ) : (
-        <h4>
-          Cargando datos <span className="spinner-grow"></span>
-        </h4>
-      )}
     </div>
   );
 }
