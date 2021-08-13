@@ -12,10 +12,22 @@ import PiePagina from "./componentes/PiePagina";
 
 /* URL API */
 const API_URL = config.apiDev;
-var dataArticulos = null;
+var dataArticulos = null,
+    dataAutores = null;
+
 function App() {
   const [componente, setComponente] = useState(<ContenidoPrincipal/>);
+  const [cargado, setCargado] = useState(false);
 
+  function obtenerAutores(idArticulo) {
+    let autores = [];
+    dataAutores.forEach(element => {
+      if (element.id_articulo == idArticulo) {
+        autores.push(element);
+      }
+    };
+    return autores
+  };
 
   async function asyncCallDatas() {
   
@@ -24,8 +36,20 @@ function App() {
     console.log("url", url);
     await getData(url)
     .then(respuesta => {
-      // console.log("respuesta",respuesta);  
+       console.log("respuesta",respuesta);  
       dataArticulos = respuesta;
+      // setCargado(true);
+    });
+    url = API_URL + "consulta_autores.php";
+    console.log("url", url);
+    await getData(url)
+    .then(respuesta => {
+       console.log("respuesta",respuesta);  
+      dataAutores = respuesta;
+      // setCargado(true);
+    });
+    dataArticulos.forEach(element => {
+      dataArticulos.autores = obtenerAutores($dataArticulos.id);
     });
   }
   useEffect(() => {
@@ -34,12 +58,20 @@ function App() {
 
   return (
     <div className= "container">
-       <GC.Provider value={{ componente, setComponente,dataArticulos}}> 
-          <Encabezado />
-          <Menu/>
-          {componente}
-          <PiePagina />
-      </GC.Provider>
+       {cargado ? (
+          <GC.Provider value={{ componente, setComponente,dataArticulos}}> 
+              <Encabezado />
+              <Menu/>
+              {/* {componente} */}
+              <PiePagina />
+          </GC.Provider>
+      ) : (
+        <>
+          <h4>
+            Cargando datos <span className="spinner-grow"></span>
+          </h4>
+        </>      
+      )}
     </div>
   );
 }

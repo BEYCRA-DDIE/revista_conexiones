@@ -32,11 +32,11 @@ export default function PublicacionesAnteriores() {
   }, []);
 
   const handlerClickElemento = (item) => { 
-    console.log("id de la revista seleccionada", item.target.id)
+    // console.log("id de la revista seleccionada", item.target.id)
     let arrayRevista = filtrarKey(publicaciones, "id", item.target.id);
-    console.log("arrayRevista", arrayRevista);
+    // console.log("arrayRevista", arrayRevista);
     let revista = arrayRevista[0];
-    console.log("revista", revista);
+    // console.log("revista", revista);
     context.setComponente(<Articulos actual = {false} revista = {revista} />) 
   };
 
@@ -47,10 +47,10 @@ export default function PublicacionesAnteriores() {
         <React.Fragment>
         <div className="row">
         {publicaciones.map((item, i) => (
-            <div key={"tarjetaColumna" + i} className="col-sm-3 mb-4">
+            <div key={"tarjetaColumna" + i} className="col-sm-3 mb-4 p-4">
               <img
               src={ item.imagen}
-              className="img-rounded"
+              className=" responsive img-rounded"
               alt={"imagen previa de"}/> 
                <p>{item.numero}° cuatrimestre {item.anno}<br />
                       Volumen: {item.volumen} <br />

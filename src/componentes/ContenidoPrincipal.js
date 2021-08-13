@@ -42,7 +42,7 @@ export default function ContenidoPrincipal(props) {
       </div>
       <div className="row">
       <div className="d-flex justify-content-center">
-        <div class="align-self-center">
+        <div className="align-self-center">
           <button
             type="button"
             className="btn btn-link"

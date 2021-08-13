@@ -7,6 +7,8 @@ export default function Catalogo() {
   console.log("estoy en catalogo")
   return (
     <div className="container">
+      {/* <div className="row">
+        <div className="col-sm-12"> */}
       <div>
         <h2>
           <a name="regresar" id="regresar"></a>Catálogo por autor:

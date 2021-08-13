@@ -1,4 +1,4 @@
-import Tarjetas from "./Tarjetas";
+import TarjetasAnteriores from "./TarjetasAnteriores";
 
 const confTarjetas = {
   img: true, //Si contienes imagenes  img=true
@@ -23,5 +23,5 @@ export default function ContAnteriores(props) {
     props.obtenerOpcion(item.id);
   };
 
-  return <Tarjetas array={props.array} obtenerItem={obtenerItemTarjeta} conf={confTarjetas} handlerClickElemento= {props.handlerClickElemento}/>;
+  return <TarjetasAnteriores array={props.array} obtenerItem={obtenerItemTarjeta} conf={confTarjetas} handlerClickElemento= {props.handlerClickElemento}/>;
 }

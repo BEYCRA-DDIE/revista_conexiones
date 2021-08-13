@@ -90,9 +90,8 @@ button.btn-primary:not(:disabled):not(.disabled):active,
   outline: 0;
   box-shadow: none!important;
 }
-.imgpadding {
-  padding-left: 10%;
-  padding-right: 10%;
+.padding-revista {
+  border: none!important;
 }
 button.btn-tarjetas,
 button.btn-tarjetas:active,
@@ -111,6 +110,9 @@ button.btn-tarjetas:not(:disabled):not(.disabled):active,
 
 .btn-primary {
   font-family: myFont!important;
+}
+button.btn-link {
+  padding:0%;
 }
 button.btn-tarjetas:hover{
   color:white;
