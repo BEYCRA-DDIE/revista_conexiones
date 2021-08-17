@@ -11,7 +11,7 @@ export default function OpcionesInformacion(props) {
 
   jsxInformacion = (
     <>
-      <h1>Información General</h1>
+      <h1 className="titulares-menu">Información General</h1>
       <hr />
       <h2>Objetivo</h2>
       <p>
@@ -45,7 +45,7 @@ export default function OpcionesInformacion(props) {
   );
   jsxEditorial = (
     <>
-      <h1>Comité editorial</h1>
+      <h1 className="titulares-menu">Comité editorial</h1>
       <hr />
       <h2>Coordinación</h2>
       <p>María del Pilar Sánchez Madrigal</p>
@@ -63,7 +63,8 @@ export default function OpcionesInformacion(props) {
 
   jsxAsesor = (
     <>
-      <h1>Comité asesor</h1>
+      <h1 className="titulares-menu">Comité asesor</h1>
+      <hr />
       <ul>
         <li>
           Jorge Ballestero Rojas. Centro de Investigación y Docencia en
@@ -91,7 +92,7 @@ export default function OpcionesInformacion(props) {
   );
   jsxNormas = (
     <>
-      <h1>Normas de publicacion</h1>
+      <h1 className="titulares-menu"className="titulares-menu">Normas de publicacion</h1>
       <hr />
       <ol>
         <li className="lh-base">
@@ -168,7 +169,7 @@ export default function OpcionesInformacion(props) {
         <div className="me-auto p-4 bd-highlight"></div>
         <div className="p-2 bd-highlight">
           <a
-            className="btn btn-success"
+            className="btn btn-editorial"
             href="./assets/files/normas_editoriales.pdf"
             target="_blank"
             role="button"
@@ -181,7 +182,7 @@ export default function OpcionesInformacion(props) {
   );
   jsxPasos = (
     <>
-      <h1>Pasos para publicar</h1>
+      <h1 className="titulares-menu">Pasos para publicar</h1>
       <ol>
         <li className="lh-base">
           Realizar el artículo sobre un tema referente a la educación en sus
@@ -193,7 +194,7 @@ export default function OpcionesInformacion(props) {
         </li>
         <li className="lh-base">
           Enviar el artículo para revisión del comité editorial al correo{" "}
-          <a href="mailto:revistaconexiones@mep.go.cr">
+          <a className= "link-articulos" href="mailto:revistaconexiones@mep.go.cr">
             revistaconexiones@mep.go.cr
           </a>{" "}
         </li>

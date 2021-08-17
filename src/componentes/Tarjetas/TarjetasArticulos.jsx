@@ -77,7 +77,7 @@ const JsxTitulo = (hx, texto) => {
                     }
                     
                     <span className=""><strong>Páginas:</strong></span> {item[conf.paginas]}<br />
-                    <a href= {item[conf.pdf]} target="_blank">PDF</a> / <a href= {item[conf.epub]} target="_blank">EPUB</a> / <a href= {item[conf.html]} target="_blank">HTML</a><br />
+                    <a className="link-articulos" href= {item[conf.pdf]} target="_blank">PDF</a> / <a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a> / <a className="link-articulos" href= {item[conf.html]} target="_blank">HTML</a><br />
                   </p>
               </div>
             </div>

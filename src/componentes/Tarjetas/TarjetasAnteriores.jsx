@@ -56,7 +56,7 @@ export default function Tarjetas(props) {
                   <br />
                   Volumen: {item[conf.volumen]}
                   <br />
-                  <a href={item[conf.url_revista]} target="_blank">
+                  <a className="enlaces-articulos" href={item[conf.url_revista]} target="_blank">
                     Revista
                   </a>
                 </span>{" "}
@@ -67,7 +67,7 @@ export default function Tarjetas(props) {
                       type="button"
                       name="articulos"
                       id={item.id}
-                      className="btn btn-link"
+                      className="btn btn-link enlaces-articulos"
                       onClick={props.handlerClickElemento}
                     >
                       Artículos

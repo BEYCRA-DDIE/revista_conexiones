@@ -113,13 +113,14 @@ export default function DataEditorial() {
         comparten sus conocimientos y valiosas experiencias en el campo
         educativo.{" "}
       </p>
-      <p>
+      <br />
+      <p><strong>
         {" "}
         Licda. Esmeralda Zúñiga Vargas <br />
         Bibliotecóloga <br />
         Departamento de Documentación e Información Electrónica <br />
         Dirección de Recursos Tecnológicos en Educación{" "}
-      </p>
+        </strong></p>
     </>
   );
   return <div>{jsxEditorial}</div>;

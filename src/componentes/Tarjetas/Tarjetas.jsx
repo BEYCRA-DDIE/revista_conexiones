@@ -65,12 +65,12 @@ export default function Tarjetas(props) {
                   <span>{item[conf.numero]}° cuatrimestre {item[conf.anno]}<br />
                       Volumen: {item[conf.volumen]}
                       <br />
-                      <a href= {item[conf.url_revista]} target="_blank">Revista</a>
+                      <a  href= {item[conf.url_revista]} target="_blank" className="enlaces-articulos">Revista</a>
                   </span> <br />
                   {
                         (item.articulos !== "0") && (
                         <>
-                          <button type="button" name= "articulos" id = {item.id} className="btn btn-link" onClick= {props.handlerClickElemento}>Artículos</button><br />
+                          <button type="button" name= "articulos" id = {item.id} className="btn btn-link enlaces-articulos" onClick= {props.handlerClickElemento}>Artículos</button><br />
                         </>
                         )}
                   </>

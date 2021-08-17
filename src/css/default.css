@@ -2,6 +2,13 @@
   font-family: myFont;
   src: url(./fonts/MyriadPro-Light.otf);
 }
+@font-face {
+  font-family: myFontRegular;
+  src: url(./fonts/MyriadPro-regular.OTF);}
+
+/* a {
+    color: #26476a!important;
+} */
 .background-container{
 background-color: #54bcbe;
   background-image: url(fondo.png);
@@ -16,10 +23,16 @@ background-color: #54bcbe;
     padding: 15px;
   }
 
+.titulares-menu {
+  font-family: myFontRegular;
+  font-weight: bold;
+  color: #26476a;
+}
+
 .background-pie{
   background-color: #54bcbe;
   color: white;
-  font-family: myFont;
+  font-family: myFontRegular;
   font-size: 1.5rem;
 }
 
@@ -34,15 +47,35 @@ background-color: #54bcbe;
   background-color: rgb(118, 201, 203) !important;
   font-weight: bold;
 }
-
-input.btn-editorial {
+.modal-header {
+  font-family: myFontRegular;
   color: #26476a;
-  font-family: myFont;
-  border-color: #54bcbe;
-  background-color: #54bcbe;
-  border: 2px solid #26476a;
+  font-weight: bold;
+  border-bottom: 5px double #26476a!important;
+}
+button .close {
+  background-color: white;
+  font-family: myFontRegular;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #26476a;
 }
 
+input.btn-editorial,
+.btn-editorial {
+  color: #fff!important;
+  font-family: myFontRegular!important;
+  border-color: #54bcbe!important;
+  background-color: #26476a!important;
+  border: 5px double #76c9cb!important;
+}
+input.btn-editorial:hover,
+.btn-editorial:hover {
+  color: #26476a!important;
+  background-color: #54bcbe!important;
+  border-color: #26476a!important;
+  font-weight: bold;
+}
 .fondo-menu,
 .card-footer-menu {
   background-color: #26476a !important;
@@ -54,6 +87,20 @@ input.btn-editorial {
 
 button.btn-suscribirse {
   width: 284px;
+}
+
+button.enlaces-articulos,
+a.enlaces-articulos,
+.link-articulos {
+  color:#219092!important;
+}
+
+button.enlaces-articulos:hover,
+a.enlaces-articulos:hover,
+.link-articulos:hover {
+  color: #26476a!important;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 img.logo-mep {
@@ -99,7 +146,8 @@ button.btn-tarjetas:not(:disabled):not(.disabled).active,
 button.btn-tarjetas:not(:disabled):not(.disabled):active, 
 .show>.btn-tarjetas.dropdown-toggle {
   color: white;
-  font-family: myFont;
+  font-family: myFontRegular!important;
+  font-size: 1.3rem;
   background-image: none;
   background-color: transparent;
   border: none;
@@ -139,6 +187,33 @@ button.navbar-brand:focus, button.navbar-brand:hover {
     background-color: transparent;
     outline: none;
   }
+
+
+  /* Catálogo */
+.nombre-autor {
+  font-family: myFontRegular;
+  font-weight: bold;
+  font-size:1rem;
+  color: black
+}
+.svg-inline--fa.fa-w-16 {
+  color: #54bcbe;;
+}
+.url-enlace {
+  color: black;
+  /* font-family: myFont; */
+  font-size: 1rem;
+}
+.url-enlace:hover, a.page-link {
+  color:#47999b!important;
+}
+a.page-link{
+  border: 1px solid #26476a!important;
+}
+a.page-link:hover{
+  background-color:#26476a;
+  color:white!important;
+}
 
   /* QUERIES */
   @media only screen and (max-width: 990px) 
