@@ -42,23 +42,36 @@ background-color: #54bcbe;
   border: none!important;
 }
 
-.card-header,
-.modal-header {
-  background-color: rgb(118, 201, 203) !important;
+.card-header {
+  /* background-color: rgb(118, 201, 203) !important; */
+  background-color: #54bcbe!important;
   font-weight: bold;
-}
-.modal-header {
   font-family: myFontRegular;
-  color: #26476a;
-  font-weight: bold;
+ }
+
+ .modal-header {
+  /* background-color: rgb(118, 201, 203) !important; */
+  background-color: #54bcbe!important;
+  background-image: url(fondo.png);
+  background-repeat: repeat;
+  padding: 15px;
   border-bottom: 5px double #26476a!important;
-}
-button .close {
-  background-color: white;
+ }
+
+ .modal-title{
   font-family: myFontRegular;
+  font-weight: bold;
+  font-size: 2rem!important;
+  color: #26476a!important;
+  text-shadow: 1px 1px 2px #418e90;
+ }
+
+button.close {
+  background-color: white !important;
+  font-family: myFontRegular !important;
   font-size: 1rem;
   font-weight: bold;
-  color: #26476a;
+  color: #26476a!important;
 }
 
 input.btn-editorial,
@@ -75,6 +88,9 @@ input.btn-editorial:hover,
   background-color: #54bcbe!important;
   border-color: #26476a!important;
   font-weight: bold;
+}
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+	padding-right: 3%!important;
 }
 .fondo-menu,
 .card-footer-menu {
@@ -215,6 +231,65 @@ a.page-link:hover{
   color:white!important;
 }
 
+
+
+.alertify .ajs-dialog{
+  background-color: white!important;
+}
+
+.alertify .ajs-header {
+  color: black;
+  font-family: "myFontRegular"!important;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #54bcbe!important;
+  background-image: url(fondo.png);
+  background-repeat: repeat;
+  padding: 15px;
+  border-bottom: 5px solid #26476a!important;
+}
+
+button.ajs-close {
+  background-color: white!important;
+  border-radius: 50%;
+}
+
+.alertify .ajs-footer {
+  background-color: transparent;
+  padding: 20px!important;
+}
+.alertify .ajs-footer .ajs-buttons .ajs-button.ajs-ok, 
+.alertify .ajs-footer .ajs-buttons .ajs-button {
+  color: white!important;
+  font-size: 20px;
+  border-radius: 50px;
+  font-family: myFontRegular;
+  cursor: pointer;
+  min-width: 30%!important; 
+  background-color: #26476a!important;
+  border: 5px solid #54bcbe!important;;
+}
+
+.alertify .ajs-footer .ajs-buttons.ajs-primary {
+  text-align: center!important;
+}
+
+.alertify .ajs-footer .ajs-buttons .ajs-button.ajs-ok:hover,
+.ajs-button.ajs-cancel:hover  {
+  background-color:#25264e;
+  font-weight: bolder;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.alertify .ajs-body {
+  font-size: 20px;
+  text-align: center;
+  color:black;
+}
+
+
   /* QUERIES */
   @media only screen and (max-width: 990px) 
 { 
@@ -224,6 +299,9 @@ a.page-link:hover{
 }
 @media only screen and (max-width: 560px) {
   .background-pie{
+    font-size: 1rem;
+  }
+  .alertify .ajs-header {
     font-size: 1rem;
   }
 }

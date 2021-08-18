@@ -6,6 +6,7 @@ import ContTarjetas from "./Tarjetas/ContTarjetas";
 import Catalogo from "./Catalogo";
 import Articulos from "./Articulos";
 import PublicacionesAnteriores from "./PublicacionesAnteriores";
+import Formulario from "./Formulario";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInbox } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +33,8 @@ export default function ContenidoPrincipal(props) {
     }
   };
   const handlerClickElemento = (item) => {
-    console.log("llamado al formulario de inscripción");
+    // console.log("llamado al formulario de inscripción");
+    context.setComponente(<Formulario />);
   };
 
   return (

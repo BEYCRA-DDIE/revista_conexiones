@@ -1,0 +1,70 @@
+[
+  {
+    "control": "input",
+    "id": "nombre",
+    "type": "text",
+    "label": "Nombre",
+    "placeholder": "Escriba su nombre",
+    "maxLength": 64,
+    "required": true
+  },
+  {
+    "control": "input",
+    "id": "apellido1",
+    "type": "text",
+    "label": "Primer apellido",
+    "placeholder": "Escriba su apellido",
+    "maxLength": 64,
+    "required": true
+  },
+  {
+    "control": "input",
+    "id": "apellido2",
+    "type": "text",
+    "label": "Segundo apellido",
+    "placeholder": "Escriba su apellido",
+    "maxLength": 64,
+    "required": true
+  },
+  {
+    "control": "input",
+    "id": "correo1",
+    "type": "email",
+    "label": "Correo",    
+    "placeholder": "Escriba su correo",
+    "maxLength": 64,
+    "required": true
+  },
+  {
+    "control": "input",
+    "id": "correo2",
+    "type": "email",
+    "label": "Correo alternativo",    
+    "placeholder": "Escriba su correo alternativo",
+    "maxLength": 64,
+    "required": false
+  },  {
+    "control": "input",
+    "id": "instancia",
+    "type": "text",
+    "label": "Instancia en que labora",
+    "placeholder": "Escriba el lugar de trabajo",
+    "maxLength": 99,
+    "required": true
+  },  {
+    "control": "input",
+    "id": "profesion",
+    "type": "text",
+    "label": "Profesión",
+    "placeholder": "Escriba su profesión",
+    "maxLength": 49,
+    "required": true
+  },
+  {
+    "control": "textarea",
+    "label": "Temas de interés",
+    "id": "intereses",
+    "rows": "6",
+    "required": true
+  }
+]
