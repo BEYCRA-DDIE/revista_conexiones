@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
-import alertify from "alertifyjs";
-import "alertifyjs/build/css/alertify.min.css";
 
 import GC from "../_complementos/Global.context";
 import ContenidoPrincipal from "./ContenidoPrincipal";
-import ContForm from "./Form/ContForm";
+import ContBuscador from "../componentes/Buscador/ContBuscador";
+
+import alertify from "alertifyjs";
+import "alertifyjs/build/css/alertify.min.css";
+
 import { sendData } from "gespro-utils/akiri";
 import config from "../config.json";
 import { useState } from "react";
@@ -13,9 +14,13 @@ import { useState } from "react";
 /* URL API */
 const API_URL = config.apiDev;
 
-export default function Formulario() {
+export default function Busqueda() {
   const [espera, setEspera] = useState(false);
   const context = useContext(GC);
+  var datos = context.dataArticulos;
+
+  console.log("datos articulos", datos);
+
 
   const getDataForm = (data) => {
     // console.log("Datos a enviar al servidor", data);
@@ -53,14 +58,14 @@ export default function Formulario() {
     <div className="container">
       <div className="d-flex justify-content-center p-3">
         <div className="align-self-center">
-          <h1 className="titulares-menu">Formulario de suscripción</h1>
+          <h1 className="titulares-menu">Búsqueda</h1>
         </div>
         <hr />
       </div>
       {!espera ? (
         <div className="row m-2">
           <div className="col-12">
-            <ContForm getDataForm={getDataForm} />
+            < ContBuscador array = {datos} />
           </div>
         </div>
       ) : (

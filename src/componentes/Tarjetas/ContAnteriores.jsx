@@ -17,7 +17,6 @@ const confTarjetas = {
 };
 
 export default function ContAnteriores(props) {
-  console.log("array", props.array);
   const obtenerItemTarjeta = (item) => {
     // console.log(item.id);
     props.obtenerOpcion(item.id);

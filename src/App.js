@@ -54,15 +54,8 @@ function App() {
         const element = array[index];
         element.autores = obtenerAutores(element.id);
      }
-    //  console.log("dataArticulos", dataArticulos);
-    //  dataArticulos.forEach(element => {
-    //     element.autores.forEach(autor => {
-    //    console.log("autor", autor);
-    //   });  
-    //  });
-    //  console.log("dataArticulos", dataArticulos);
       setCargado(true);
-    });
+     });
   },[]);  
 
   return (

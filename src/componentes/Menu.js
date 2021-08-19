@@ -4,12 +4,11 @@ import GC from "../_complementos/Global.context";
 // componentes
 import OpcionesInformacion from "./OpcionesInformacion";
 import ContenidoPrincipal from "./ContenidoPrincipal";
+import Busqueda from "./Busqueda";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -19,12 +18,30 @@ const inicio = <FontAwesomeIcon icon={faHome} />;
 
 export default function Menu(props) {
 const context = useContext(GC);
+
 const obtenerOpcion = (item) => {
    let opcion = parseInt(item.currentTarget.name);
   // console.log("item",opcion);
-  (opcion === 5)
-  ?context.setComponente(<ContenidoPrincipal/>)
-  :context.setComponente(<OpcionesInformacion opcion= {opcion}/>)
+  switch (opcion) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:      
+      context.setComponente(<OpcionesInformacion opcion= {opcion}/>)
+    break;
+    case 5:      
+      context.setComponente(<ContenidoPrincipal/>)
+    break;
+    case 8:      
+      context.setComponente(<Busqueda/>)
+    break;
+    default:
+      break;
+  }
+  // (opcion === 5)
+  // ?context.setComponente(<ContenidoPrincipal/>)
+  // :context.setComponente(<OpcionesInformacion opcion= {opcion}/>)
 }
   return (
       <Navbar className= "fondo-menu" bg="" expand="lg">
@@ -49,19 +66,10 @@ const obtenerOpcion = (item) => {
             <img src="./assets/img/img_pasos_publicacion.png" alt="imagen" /> Pasos de publicación
             </Nav.Link>
             {/* <Nav.Link as={Button} name="4" onClick={obtenerOpcion}> */}
-            <Nav.Link as={Button} name="8">
+            <Nav.Link as={Button} name="8" onClick={obtenerOpcion}>
             <img src="./assets/img/img_buscar.png" alt="imagen" /> Buscar
             </Nav.Link>
           </Nav>
-          {/* <Form className="d-flex justify-content-end p-2">
-            <FormControl
-              type="search"
-              placeholder="Búsqueda"
-              className="mr-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form> */}
         </Navbar.Collapse>
       </Navbar>
   );

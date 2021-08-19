@@ -38,7 +38,7 @@ export default function Tarjetas(props) {
   return (
     <div className="row">
       {props.array.map((item, i) => (
-        <div key={"tarjetaColumna" + i} className={"col-" + conf.col}>
+        <div key={"tarjetaColumna1" + i} className={"col-" + conf.col}>
           <div className = {"card mb-4 " + conf.padding}>
             { item[conf.titulo] &&            
               <div className="card-header text-center">

@@ -43,7 +43,7 @@ export default function Catalogo() {
     arrayLetras = letrasA.filter((item, index) => {
       return letrasA.indexOf(item) === index;
     });
-    console.log("datos", datos);
+    // console.log("datos", datos);
     cb();
   }
 
@@ -53,9 +53,6 @@ export default function Catalogo() {
     });
   }, []);
 
-  const handlerClickLetra = (item) => {
-    console.log("item", item.target.name);
-  };
 
   function autores(autor) {
     var array = autor,
@@ -65,19 +62,11 @@ export default function Catalogo() {
     for (let index = 0; index < array.length; index++) {
       const element = array[index];
       if (index == 0) {
-        console.log("está en 0", letraEncabezado !== element.apellido1[0]);
         if (letraEncabezado !== element.apellido1[0]) {
-          console.log("condicional true");
           <EncabezadoLetra letra={element.apellido1[0]} arriba={arriba} />;
           letraEncabezado = element.apellido1[0];
         }
       }
-      console.log(
-        "autor",
-        element.apellido1,
-        element.apellido2,
-        element.nombre
-      );
       element.apellido2
         ? (nombreCompleto =
             nombreCompleto +
@@ -107,9 +96,7 @@ export default function Catalogo() {
     for (let index = 0; index < array.length; index++) {
       const element = array[index];
       if (index == 0) {
-        console.log("está en 0", letraEncabezado !== element.apellido1[0]);
         if (letraEncabezado !== element.apellido1[0]) {
-          console.log("condicional true");
           componente = (
             <EncabezadoLetra letra={element.apellido1[0]} arriba={arriba} />
           );
@@ -145,7 +132,7 @@ export default function Catalogo() {
           </nav>
           <div>
             {datos.map((item, i) => (
-              <div key={"item" + i}>
+              <div key={"autores" + i}>
                 {encabezado(item.autores)}
                 <p className="nombre-autor">{autores(item.autores)}</p>
                 <ul>

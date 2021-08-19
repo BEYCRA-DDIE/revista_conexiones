@@ -11,11 +11,6 @@ let valoresCheck = [];
 
 const handleGetCheck = (e) => {
   const item = e.target;
-  /*
-  console.log(item.id);
-  console.log(item.checked);
-  console.log(item.name);
-  */
 
   if (item.checked) {
     //si es vardadero simplemente lo agrega en el array:
@@ -54,8 +49,8 @@ const Form = (props) => {
     props.getDataForm(data);
     e.target.reset(); // reset after form submit
   };
-  console.log(errors);
-  console.log(errors.correo);
+  // console.log(errors);
+  // console.log(errors.correo);
 
   const handleGetValue = (e) => {
     const val = e.target.value;
@@ -181,7 +176,7 @@ const Form = (props) => {
     }
 
     return (
-      <div className="row" key={key}>
+      <div className="row">
         <div className="col-sm-12">
           <span className={`item-titulo ${errors[item.id] && "item-error"}`}>
             {item.required && <span className="item-required">*</span>}

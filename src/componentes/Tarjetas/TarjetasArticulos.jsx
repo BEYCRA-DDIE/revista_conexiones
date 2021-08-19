@@ -56,7 +56,7 @@ const JsxTitulo = (hx, texto) => {
                     <> 
                      <span className=""><strong>Autoras(es): </strong></span>
                      {item.autores.map((autor, i) => (
-                       <>
+                       <span key={"itemautores"+i}>
                           <span>{autor.nombre} </span>
                           {autor.apellido2 
                           ?<>
@@ -69,7 +69,7 @@ const JsxTitulo = (hx, texto) => {
                           </>
                           }
                           {i !== item.autores.length-1 && <span>, </span>}
-                       </>
+                       </span>
                      ))
                       }
                       <br />

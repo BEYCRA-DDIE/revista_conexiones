@@ -27,13 +27,12 @@ export default function ContenidoPrincipal(props) {
       case 3:
         context.setComponente(<Catalogo />);
         break;
-
       default:
         break;
     }
   };
   const handlerClickElemento = (item) => {
-    // console.log("llamado al formulario de inscripción");
+    //  console.log("llamado al formulario de inscripción");
     context.setComponente(<Formulario />);
   };
 

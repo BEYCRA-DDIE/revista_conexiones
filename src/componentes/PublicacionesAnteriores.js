@@ -33,11 +33,8 @@ export default function PublicacionesAnteriores() {
   }, []);
 
   const handlerClickElemento = (item) => { 
-    console.log("id de la revista seleccionada", item.target.id)
     let arrayRevista = filtrarKey(publicaciones, "id", item.target.id);
-    console.log("arrayRevista", arrayRevista);
     let revista = arrayRevista[0];
-     console.log("revista", revista);
      context.setComponente(<Articulos actual = {false} revista = {revista} />) 
    };
 
