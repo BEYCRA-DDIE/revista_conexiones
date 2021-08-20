@@ -1,11 +1,14 @@
 import Buscador from "./Buscador";
 // import array from "./ej_tabla.json";
 
-const obtenerFiltrados = (f) => {
-  console.log("Filtrados---->", f);
-};
+
 
 export default function ContBusador(props) {
+
+  const obtenerFiltrados = (f) => {
+    // console.log("Filtrados---->", f);
+    props.filtrobusqueda(f)
+  };
 
 // var array = props.array;
 console.log("array palabras clave", props.array[0].palabra_clave);

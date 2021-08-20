@@ -49,7 +49,9 @@ const JsxTitulo = (hx, texto) => {
               }
               <div className="card-body">
                   <p>
-                    <span><strong>Resumen:</strong></span> {item[conf.resumen]}<br />
+                  {item[conf.resumen] &&
+                    <><span><strong>Resumen: </strong>{item[conf.resumen]}</span><br /></>
+                  }
                     {item.autores.length == 1 
                     ?<> <span className=""><strong>Autor(a): </strong></span>{item.autores[0].nombre} {item.autores[0].apellido1} {item.autores[0].apellido2}<br /></>
                     :

@@ -89,9 +89,11 @@ input.btn-editorial:hover,
   border-color: #26476a!important;
   font-weight: bold;
 }
-.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
-	padding-right: 3%!important;
+
+#lupa-addon {
+  background-color: #76c9cb!important;
 }
+
 .fondo-menu,
 .card-footer-menu {
   background-color: #26476a !important;
@@ -109,6 +111,15 @@ button.enlaces-articulos,
 a.enlaces-articulos,
 .link-articulos {
   color:#219092!important;
+}
+.link-articulos-busqueda {
+  color:#219092!important;
+  text-decoration: none!important; 
+}
+.link-articulos-busqueda:hover {
+  color: #26476a!important;
+  font-weight: bold;
+  text-decoration: underline!important;
 }
 
 button.enlaces-articulos:hover,

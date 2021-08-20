@@ -1,3 +1,4 @@
+import React from "react";
 import { buscar } from 'gespro-utils/buscador';
 
 var array = [];
@@ -14,7 +15,7 @@ export default function Buscador(props) {
   };
 
   return (
-    <div className="input-group mb-3">
+    <div className="input-group input-group-search mb-3">
       <div className="input-group-prepend">
         <span className="input-group-text" id="lupa-addon">
           🔍
