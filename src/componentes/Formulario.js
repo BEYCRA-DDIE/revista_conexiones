@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import { useForm } from "react-hook-form";
 import alertify from "alertifyjs";
 import "alertifyjs/build/css/alertify.min.css";
@@ -14,6 +14,12 @@ import { useState } from "react";
 const API_URL = config.apiDev;
 
 export default function Formulario() {
+  
+  window.gtag('config', 'G-R4JLPNE7SH', {
+    'page_title' : 'formulario',
+    'page_path': '/formulario'
+  });
+
   const [espera, setEspera] = useState(false);
   const context = useContext(GC);
 
@@ -29,6 +35,9 @@ export default function Formulario() {
       // console.log("respuesta", respuesta);
       setEspera(false);
       if (!respuesta.error) {
+        // Sends the event to Google Analytics and
+  // resubmits the form once the hit is done.
+  window.gtag('event', 'envio_formulario_suscripcion');
         alertify
           .alert(
             "Aviso",
@@ -48,6 +57,17 @@ export default function Formulario() {
       }
     });
   };
+  useEffect(() => {
+  //   window.gtag("event", "login", {
+  //     event_category: "access",
+  //     event_label: "login"
+  // });
+  // window.gtag('config', 'G-R4JLPNE7SH', {
+  //     'page_title' : 'formulario',
+  //     'page_path': '/formulario'
+  //   });
+  }, []);
+
 
   return (
     <div className="container">

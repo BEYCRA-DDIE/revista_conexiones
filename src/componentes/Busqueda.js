@@ -1,13 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
-
 import GC from "../_complementos/Global.context";
-import TarjetaArticulos from "./Tarjetas/TarjetasArticulos";
+// import TarjetaArticulos from "./Tarjetas/TarjetasArticulos";
 import ContBuscador from "../componentes/Buscador/ContBuscador";
 
 // import alertify from "alertifyjs";
 // import "alertifyjs/build/css/alertify.min.css";
 
-import { sendData } from "gespro-utils/akiri";
+// import { sendData } from "gespro-utils/akiri";
 import { getData } from "gespro-utils/akiri";
 
 import config from "../config.json";
