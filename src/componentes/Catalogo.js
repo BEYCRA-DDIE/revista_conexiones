@@ -12,6 +12,10 @@ var arrayLetras = [],
   nombre = null;
 
 export default function Catalogo() {
+  window.gtag('config', 'G-R4JLPNE7SH', {
+    'page_title' : 'Catálogo',
+    'page_path': '/catalogo'
+  });
   const context = useContext(GC);
   const [cargado, setCargado] = useState(false);
 

@@ -16,7 +16,7 @@ const API_URL = config.apiDev;
 export default function Formulario() {
   
   window.gtag('config', 'G-R4JLPNE7SH', {
-    'page_title' : 'formulario',
+    'page_title' : 'Formulario inscripcion',
     'page_path': '/formulario'
   });
 
@@ -37,7 +37,7 @@ export default function Formulario() {
       if (!respuesta.error) {
         // Sends the event to Google Analytics and
   // resubmits the form once the hit is done.
-  window.gtag('event', 'envio_formulario_suscripcion');
+  // window.gtag('event', 'envio_formulario_suscripcion');
         alertify
           .alert(
             "Aviso",
@@ -57,16 +57,6 @@ export default function Formulario() {
       }
     });
   };
-  useEffect(() => {
-  //   window.gtag("event", "login", {
-  //     event_category: "access",
-  //     event_label: "login"
-  // });
-  // window.gtag('config', 'G-R4JLPNE7SH', {
-  //     'page_title' : 'formulario',
-  //     'page_path': '/formulario'
-  //   });
-  }, []);
 
 
   return (

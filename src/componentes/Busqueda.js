@@ -16,6 +16,11 @@ const API_URL = config.apiDev;
 var publicaciones = null,
   campoRevista = {};
 export default function Busqueda() {
+  window.gtag('config', 'G-R4JLPNE7SH', {
+    'page_title' : 'Busqueda',
+    'page_path': '/busqueda'
+  });
+  
   const [cargado, setCargado] = useState(false);
   const [articulosFiltrados, setArticulosFiltrados] = useState(null);
   const context = useContext(GC);

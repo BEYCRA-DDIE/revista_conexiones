@@ -15,7 +15,10 @@ const API_URL = config.apiDev;
 var publicaciones = null;
 
 export default function PublicacionesAnteriores() {
-
+  window.gtag('config', 'G-R4JLPNE7SH', {
+    'page_title' : 'Publicaciones Anteriores',
+    'page_path': '/publicacionesanteriores/articulos'
+  });
   const [cargado, setCargado] = useState(false);
    const context = useContext(GC);
   

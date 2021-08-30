@@ -1,3 +1,5 @@
+import ContTarjetasArticulos from "./ContTarjetasArticulos";
+
 const JsxTitulo = (hx, texto) => {
     //console.log(hx, texto);
     let titulo;
@@ -34,7 +36,15 @@ const JsxTitulo = (hx, texto) => {
     const handleGetItem=(i)=> {
       props.obtenerItem( props.array[i]);
     }
-  
+    const handlerClick=(e)=> {
+      console.log("e", e.currentTarget.id);
+      let url =  e.currentTarget.id
+      window.gtag('event', 'Descarga PDF', {
+        'event_category' : 'Descargas',
+        'event_label' : 'Artículo',
+        'event_file' : e.currentTarget.id,
+      });
+    }
     return (
       
       <div className="row"> 
@@ -79,7 +89,11 @@ const JsxTitulo = (hx, texto) => {
                     }
                     
                     <span className=""><strong>Páginas:</strong></span> {item[conf.paginas]}<br />
-                    <a className="link-articulos" href= {item[conf.pdf]} target="_blank">PDF</a> / <a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a> / <a className="link-articulos" href= {item[conf.html]} target="_blank">HTML</a><br />
+                    <span id= {item[conf.html]} className="link-articulos" onClick= {handlerClick} ><a className="link-articulos" href= {item[conf.html]} target="_blank">HTML / </a></span>
+                    <span id= {item[conf.pdf]} className="link-articulos" onClick= {handlerClick} > <a className="link-articulos" href= {item[conf.pdf]} target="_blank">PDF</a> / </span>
+                    <span id= {item[conf.epub]} className="link-articulos" onClick= {handlerClick}><a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a>  </span>
+                    <br />
+                    {/* <a className="link-articulos" onClick = {handlerClick} href= {item[conf.pdf]} target="_blank">PDF</a> / <a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a> / <a className="link-articulos" href= {item[conf.html]} target="_blank">HTML</a><br /> */}
                   </p>
               </div>
             </div>

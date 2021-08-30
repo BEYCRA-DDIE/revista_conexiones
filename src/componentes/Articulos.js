@@ -43,7 +43,16 @@ export default function Articulos(props) {
   const [cargado, setCargado] = useState(false);
   const [verEditorial, setVerEditorial] = useState(false);
   var datos = context.dataArticulos;
+  
+  //carga página vista a Revista Actual si acutal es verdadero
+  //si no desde Publicaciones anteriores se carga a la respectiva página
 
+  if (props.actual) {
+      window.gtag('config', 'G-R4JLPNE7SH', {
+        'page_title' : 'Revista actual',
+        'page_path': '/revista_actual/articulos'
+      });
+  }
   // console.log("datos articulos", datos);
   // console.log("actual", props.actual);
 

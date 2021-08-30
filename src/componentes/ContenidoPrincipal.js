@@ -13,6 +13,11 @@ import { faInbox } from "@fortawesome/free-solid-svg-icons";
 const inscribir = <FontAwesomeIcon icon={faInbox} />;
 
 export default function ContenidoPrincipal(props) {
+  window.gtag('config', 'G-R4JLPNE7SH', {
+    'page_title' : 'Inicio',
+    'page_path': '/inicio'
+  });
+
   const context = useContext(GC);
   const obtenerOpcion = (item) => {
     let opcion = parseInt(item);
