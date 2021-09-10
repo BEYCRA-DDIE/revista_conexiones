@@ -51,9 +51,12 @@ export default function Tarjetas(props) {
                 alt={"imagen previa de " + item[conf.titulo]}
               />
               <p>
+                  {(parseInt(item[conf.numero]) <= 3)
+                  ? <span> {item[conf.numero]}° cuatrimestre {item[conf.anno]}</span>
+                  :<span> Edición Especial - {item[conf.anno]} </span>
+                }
                 <span>
-                  {item[conf.numero]}° cuatrimestre {item[conf.anno]}
-                  <br />
+                <br />
                   Volumen: {item[conf.volumen]}
                   <br />
                   <a className="enlaces-articulos" href={item[conf.url_revista]} target="_blank">

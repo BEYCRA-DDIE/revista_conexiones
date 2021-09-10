@@ -9,6 +9,7 @@ const confTarjetas = {
   numero: "numero", //nombre del campo de la descripción
   imagen: "imagen",
   anno: "anno",
+  mes : "mes",
   informacion: true,
   titulo: "titulo",
   url_revista: "url_revista",

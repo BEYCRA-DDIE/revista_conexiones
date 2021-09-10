@@ -89,8 +89,8 @@ const JsxTitulo = (hx, texto) => {
                     }
                     
                     <span className=""><strong>Páginas:</strong></span> {item[conf.paginas]}<br />
-                    <span id= {item[conf.html]} className="link-articulos" onClick= {handlerClick} ><a className="link-articulos" href= {item[conf.html]} target="_blank">HTML / </a></span>
                     <span id= {item[conf.pdf]} className="link-articulos" onClick= {handlerClick} > <a className="link-articulos" href= {item[conf.pdf]} target="_blank">PDF</a> / </span>
+                    <span id= {item[conf.html]} className="link-articulos" onClick= {handlerClick} ><a className="link-articulos" href= {item[conf.html]} target="_blank">HTML / </a></span>
                     <span id= {item[conf.epub]} className="link-articulos" onClick= {handlerClick}><a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a>  </span>
                     <br />
                     {/* <a className="link-articulos" onClick = {handlerClick} href= {item[conf.pdf]} target="_blank">PDF</a> / <a className="link-articulos" href= {item[conf.epub]} target="_blank">EPUB</a> / <a className="link-articulos" href= {item[conf.html]} target="_blank">HTML</a><br /> */}

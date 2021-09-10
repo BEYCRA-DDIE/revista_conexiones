@@ -119,13 +119,13 @@ export default function Articulos(props) {
             <h1>{revista.nombre} </h1>
             <h2>
               Volumen {revista.volumen}, número {revista.numero} -{" "}
-              {meses[revista.mes]} {revista.anno} - ISSN {revista.issn}
+              {meses[revista.mes]} {revista.anno} - ISSN 1659-4487
             </h2>
           </div>
           {!props.actual && (
             <>
                   <div className="d-flex justify-content-end">
-                  <h6><strong>EDITORIAL</strong>: <a className="link-articulos" href={revista.url_editorial+".pdf"} target="_blank">PDF</a> / <a  className="link-articulos" href={revista.url_editorial+".epub"} target="_blank">EPUB</a> / <a  className="link-articulos" href={revista.url_editorial+".html"} target="_blank">HTML</a></h6>
+                  <h6><strong>EDITORIAL</strong>: <a className="link-articulos" href={revista.url_editorial_pdf} target="_blank">PDF</a> / <a  className="link-articulos" href={revista.url_editorial_epub} target="_blank">EPUB</a> / <a  className="link-articulos" href={revista.url_editorial_html} target="_blank">HTML</a></h6>
                   <hr />
                 </div>          
             </>
